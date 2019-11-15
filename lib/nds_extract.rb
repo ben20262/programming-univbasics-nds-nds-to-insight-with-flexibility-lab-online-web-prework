@@ -111,7 +111,7 @@ def actually_works(nds)
   nds.each do |direct|
     direct[:movies].each do |movie|
       name = movie[:studio]
-      if hash.key?[name]
+      if hash.has_key?[name]
         hash[name] += movie[:gross]
       else
         hash[name] = movie[:gross]
