@@ -106,6 +106,21 @@ def movies_with_directors_set(source)
   array
 end
 
+def actually_works(nds)
+  hash = {}
+  nds.each do |direct|
+    direct[:movies].each do |movie|
+      name = movie[:studio]
+      if hash.key?[name]
+        hash[name] += movie[:gross]
+      else
+        hash[name] = movie[:gross]
+      end
+    end
+  end
+  hash
+end
+
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method
 # call code. You'll have to "see-saw" to get this to work!
@@ -113,5 +128,5 @@ end
 def studios_totals(nds)
   a_o_a_movies_with_director_names = movies_with_directors_set(nds)
   movies_with_director_names = flatten_a_o_a(a_o_a_movies_with_director_names)
-  return gross_per_studio(movies_with_director_name)
+  return actually_works(nds)
 end
