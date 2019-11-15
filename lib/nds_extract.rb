@@ -72,9 +72,9 @@ def gross_per_studio(collection)
   collection.each do |movie|
     studio = movie[:studio]
     if hash.has_key?(studio)
-      hash[:studio] += movie[:worldwide_gross]
+      hash[studio] += movie[:worldwide_gross]
     else
-      hash[:studio] = movie[:worldwide_gross]
+      hash[studio] = movie[:worldwide_gross]
     end
   end
   hash
