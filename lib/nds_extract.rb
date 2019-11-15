@@ -92,7 +92,7 @@ def movies_with_directors_set(source)
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
   array = []
-  source[:test_data][0].each do |direct|
+  source.each do |direct|
     name = direct[:name]
     brray = []
     direct[:movies].each do |movie|
