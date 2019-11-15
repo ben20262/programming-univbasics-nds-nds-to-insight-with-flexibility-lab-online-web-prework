@@ -97,8 +97,10 @@ def movies_with_directors_set(source)
     brray = []
     direct[movies].each do |movie|
       hash = {}
-      hash[direct] = movie[:title]
-      brray << hash
+      movie.each do |film_title|
+        hash[direct] = film_title[:title]
+      end
+    brray << hash
     end
     array << brray
   end
